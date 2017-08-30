@@ -287,7 +287,7 @@ abstract class AbstractStyle
     {
         if ($value != null && trim($value) != '' && !empty($enum) && !in_array($value, $enum)) {
             throw new \InvalidArgumentException("Invalid style value: {$value} Options:".join(',', $enum));
-        } elseif ($value === null || trim($value) == '') {
+        } elseif ($value === null || trim($value) == '' || trim($value) == 'none') {
             $value = $default;
         }
 
